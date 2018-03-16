@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<form method="post" action="">
+	<table border="1">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>幸福性</th>
+				<th>気分安定性</th>
+				<th>向上心</th>
+				<th>神経質</th>
+				<th>協調性</th>
+				<th>アグレッシブさ</th>
+				<th>主観/客観</th>
+				<th>外向性/内向性</th>
+				<th>思慮/行動</th>
+				<th>受容性</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for result in results %}
+			<tr>
+				<td>{{ result.userID }}</td>
+				<td>{{ result.res_001 }}</td>
+				<td>{{ result.res_002 }}</td>
+				<td>{{ result.res_003 }}</td>
+				<td>{{ result.res_004 }}</td>
+				<td>{{ result.res_005 }}</td>
+				<td>{{ result.res_006 }}</td>
+				<td>{{ result.res_007 }}</td>
+				<td>{{ result.res_008 }}</td>
+				<td>{{ result.res_009 }}</td>
+				<td>{{ result.res_010 }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</form>
+{% endif %}
+{% endblock %}

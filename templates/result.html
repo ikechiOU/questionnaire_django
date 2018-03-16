@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<p style='text-align: center;'><img src='/quiz/chart.png'></p>
+<p>A: 幸福性</p>
+{% for fb in A %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>B: 気分安定性</p>
+{% for fb in B %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>C: 向上心</p>
+{% for fb in C %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>D: 神経質</p>
+{% for fb in D %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>E: 協調性</p>
+{% for fb in E %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>F: アグレッシブさ</p>
+{% for fb in F %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>G: 主観/客観</p>
+{% for fb in G %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>H: 外向性/内向性</p>
+{% for fb in H %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>I: 思慮/行動</p>
+{% for fb in I %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+<p>J: 受容性</p>
+{% for fb in J %}
+<p>{{ fb.fb_text }}</p>
+{% endfor %}
+{% endif %}
+{% endblock %}

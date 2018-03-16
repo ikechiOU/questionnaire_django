@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+ようこそ　{{ user }}さん<br>
+{{ message }}<br>
+  <a href="{% url 'pams:quiz' %}">Go</a>
+{% endif %}
+{% endblock %}

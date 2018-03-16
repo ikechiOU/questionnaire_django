@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="center_wrap">
+{% for quiz in qiz %}
+<p style="margin-bottom:15em;"> </p>
+<p style="margin-bottom:13em;">{{ quiz.quiz_text }}</p>
+
+<form action="{% url 'pams:quiz' %}" method="get">
+  {% csrf_token %}
+  <input id="submit_button" type="submit" name="button_1" value="1">
+  <input id="submit_button" type="submit" name="button_2" value="2">
+  <input id="submit_button" type="submit" name="button_3" value="3">
+  <input id="submit_button" type="submit" name="button_4" value="4">
+  <input id="submit_button" type="submit" name="button_5" value="5">
+</form>
+<p style="margin-bottom:7em;font-size:0.5em;">そう思う　　　　　　　　　　　　　　　　　　思わない</p>
+
+{% endfor %}
+{% endif %}
+{% endblock %}
+</div>
